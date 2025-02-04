@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álbum de Fotos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+  <h1>Álbum de Fotos</h1>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4" id="card-container">
+        <div class="card">
+          <img src="https://th.bing.com/th/id/OIP.MSrZNMlIeTUSITIB2f7QLQHaEK?rs=1&pid=ImgDetMain" class="card-img-top" alt="Imagen 1">
+          <div class="card-body">
+            <p class="card-text">Peliculas</p>
+            <button class="btn btn-primary" onclick="verImagen(0)">Ver</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://images5.alphacoders.com/571/thumb-1920-571559.jpg" class="card-img-top" alt="Imagen 2">
+          <div class="card-body">
+            <p class="card-text">Equipos de futbol</p>
+            <button class="btn btn-primary" onclick="verImagen(1)">Ver</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://th.bing.com/th/id/R.95ddaceb0ec2bb22a3da181b9a6e8ad9?rik=TTXFQZoDgqDqDQ&pid=ImgRaw&r=0" class="card-img-top" alt="Imagen 3">
+          <div class="card-body">
+            <p class="card-text">Comida</p>
+            <button class="btn btn-primary" onclick="verImagen(2)">Ver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://static.tildacdn.com/tild6163-3133-4536-b762-356265613232/Optimized-Copy_of_IM.jpg" class="card-img-top" alt="Imagen 4">
+          <div class="card-body">
+            <p class="card-text">Juegos</p>
+            <button class="btn btn-primary" onclick="verImagen(3)">Ver</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://th.bing.com/th/id/R.a9f5181a0c216785c9be4f68e31ee8fc?rik=0i6eo9lb6bGGGQ&pid=ImgRaw&r=0" class="card-img-top" alt="Imagen 5">
+          <div class="card-body">
+            <p class="card-text">Autos</p>
+            <button class="btn btn-primary" onclick="verImagen(4)">Ver</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://th.bing.com/th/id/OIP.32fQYDT9PKxqYUeNKXaxxwHaEK?rs=1&pid=ImgDetMain" class="card-img-top" alt="Imagen 6">
+          <div class="card-body">
+            <p class="card-text">Paises</p>
+            <button class="btn btn-primary" onclick="verImagen(5)">Ver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselModal" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="carouselImages">
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselModal" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselModal" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Hecho por <a href="#">Miguel Angel Zambrano</a></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function verImagen(indice) {
+      const imagenes = [
+        ['https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/3b/8e/c3/3b8ec32a-9e26-2def-0168-3574637a0abc/pr_source.lsr/1200x675.jpg', 'https://image.tmdb.org/t/p/original/br7n8b3ELexcvs6l30IH2x9P2ux.jpg', 'https://imagenes.20minutos.es/files/gallery_desktop_default_content/uploads/imagenes/2022/07/16/harry-potter-y-la-orden-del-fenix-2007-4.jpeg'],
+        ['https://th.bing.com/th/id/OIP.ZHI34IvkovtZnLou1OOgDwHaHa?rs=1&pid=ImgDetMain', 'https://th.bing.com/th/id/OIP.-u5Ys-cUAquD4iI8mG_RvgHaHg?rs=1&pid=ImgDetMain', 'https://th.bing.com/th/id/OIP.hKNBJlznC9zr-gPVq8CAzwHaHa?rs=1&pid=ImgDetMain'],
+        ['https://th.bing.com/th/id/OIP.PCcuBkPzzHHrThk09qVnpwHaJL?rs=1&pid=ImgDetMain', 'https://th.bing.com/th/id/OIP.HAu8l9ToJmaNvUVYqmDe2AHaE8?rs=1&pid=ImgDetMain', 'https://th.bing.com/th/id/R.a4dc4cb6e12140010af594d430490ada?rik=1SRmIHwXQdpiHg&riu=http%3a%2f%2fwww.unileverfoodsolutions.com.co%2fdam%2fglobal-ufs%2fmcos%2fNOLA%2fcalcmenu%2frecipes%2fcol-recipies%2ffruco-tomate-cocineros%2fHAMBURGUESA+1200x709.png&ehk=12fD27rm5Fj4INOTvgq3Z0yMS3mcsABh5%2fS%2b0d7m3II%3d&risl=&pid=ImgRaw&r=0'],
+        ['https://th.bing.com/th/id/R.fd65627d643a08c7690e5ec27b9a6518?rik=iNIkSSoePR6OpQ&pid=ImgRaw&r=0', 'https://th.bing.com/th/id/R.7457066d1d93c40a82035705c39707d0?rik=mY9smNs1DrTkqQ&riu=http%3a%2f%2fwww.passthecontroller.co.uk%2fuploads%2f6%2f9%2f2%2f8%2f69285419%2f1920x1080_orig.jpg&ehk=KtVe4Md47gQ7Ck2NdPzL%2fAHLftCCJErOpSZ9sDGuPfc%3d&risl=&pid=ImgRaw&r=0', 'https://cdn1.epicgames.com/offer/fn/Blade_2560x1440_2560x1440-95718a8046a942675a0bc4d27560e2bb'],
+        ['https://th.bing.com/th/id/OIP.BQ8nJo_lRPiUVp9UBuV4GgHaEi?rs=1&pid=ImgDetMain', 'https://th.bing.com/th/id/OIP.Qo2zz9QUVRS5fiEBvPsxuwHaES?rs=1&pid=ImgDetMain', 'https://th.bing.com/th/id/R.8f98430c45eb73d107944359dab48a41?rik=ChZ1gsJhIjVtIA&pid=ImgRaw&r=0'],
+        ['https://th.bing.com/th/id/OIP.MSTm4Uc1YcZMmOrrAjFGrAHaEK?rs=1&pid=ImgDetMain', 'https://content.skyscnr.com/m/7e1dce4212154ea9/original/GettyImages-490642704.jpg?resize=1800px:1800px&quality=100', 'https://elluchador.info/wp-content/uploads/2025/02/bandera-colombia-getty-images.jpg']
+      ];
+
+      const imagenesSeleccionadas = imagenes[indice];
+      const carouselImages = document.getElementById('carouselImages');
+      carouselImages.innerHTML = '';
+
+      imagenesSeleccionadas.forEach((imgSrc, i) => {
+        const div = document.createElement('div');
+        div.classList.add('carousel-item');
+        if (i === 0) div.classList.add('active');
+        div.innerHTML = `<img src="${imgSrc}" class="d-block w-100" alt="Imagen ${i + 1}">`;
+        carouselImages.appendChild(div);
+      });
+
+      const modal = new bootstrap.Modal(document.getElementById('modal'));
+      modal.show();
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark-theme');
+      const button = document.querySelector('.theme-toggle');
+      if (body.classList.contains('dark-theme')) {
+        button.innerHTML = '🌞';
+      } else {
+        button.innerHTML = '🌙';
+      }
+    }
+  </script>
+</body>
+</html>
